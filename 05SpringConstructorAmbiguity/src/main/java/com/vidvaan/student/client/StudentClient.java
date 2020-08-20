@@ -13,11 +13,17 @@ public class StudentClient {
 //1. Beanfactory
 //2. ApplicationContext
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Student student = context.getBean("student", Student.class);
+		Student student = context.getBean("st2", Student.class);
 //		Student student2 = context.getBean("student", Student.class);
 		student.display();
 //		student2.display();
+		String aliasNames[]=context.getAliases("student");
+		for (String string : aliasNames) {
+			System.out.println(string);
+		}
 
 	}
 
 }
+
+

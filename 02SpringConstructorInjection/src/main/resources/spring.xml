@@ -11,8 +11,8 @@
 	</bean>
 
 
-<bean id="student2" class="com.vidvaan.student.bean.Student">
-		<constructor-arg name="sid" value="101" />
-		<constructor-arg name="name" value="Laxmi" />
-	</bean>
+<!-- <bean id="student2" class="com.vidvaan.student.bean.Student"> -->
+<!-- 		<constructor-arg name="sid" value="101" /> -->
+<!-- 		<constructor-arg name="name" value="Laxmi" /> -->
+<!-- 	</bean> -->
 </beans>

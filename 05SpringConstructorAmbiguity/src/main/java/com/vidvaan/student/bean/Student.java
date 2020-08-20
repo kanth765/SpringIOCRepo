@@ -1,11 +1,18 @@
 package com.vidvaan.student.bean;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 //Student is dependent
 public class Student {
 
-	//dependency
+	// dependency
 	private int sid;
 	private String name;
+//	private List<String> contacts;
+//	private Set<String> address;
+//	private Map<String, String> course;
 
 	public Student(int sid, String name) {
 		System.out.println("Student(int sid, String name)");
