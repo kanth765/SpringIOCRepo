@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="airtel" class="com.vidvaan.network.bean.AirtelNetwork"></bean>
+	<bean id="jio" class="com.vidvaan.network.bean.JioNetwork"></bean>
+	<bean id="idea" class="com.vidvaan.network.bean.IdeaNetwork"></bean>
+	<!-- <bean id="bhart" class="com.vidvaan.network.bean.BahratNetwork"></bean> -->
+
+	<bean id="samsung" class="com.vidvaan.network.bean.Samsung">
+		<!-- <property name="network" ref="airtel"/> -->
+		<constructor-arg name="network" ref="airtel" />
+	</bean>
+
+	<bean id="redmi" class="com.vidvaan.network.bean.Xoami">
+		<property name="network" ref="jio"></property>
+	</bean>
+
+</beans>

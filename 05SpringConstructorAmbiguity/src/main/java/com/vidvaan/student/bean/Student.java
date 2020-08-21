@@ -8,8 +8,10 @@ import java.util.Set;
 public class Student {
 
 	// dependency
-	private int sid;
-	private String name;
+	private int sid = 1;
+	private String name = "none";
+	private double fee = 0.0;
+	private String course = "java";
 //	private List<String> contacts;
 //	private Set<String> address;
 //	private Map<String, String> course;
@@ -20,14 +22,25 @@ public class Student {
 		this.name = name;
 	}
 
-	public Student(String sid, String name) {
-		System.out.println("Student(String sid, String name)");
-		this.sid = Integer.parseInt(sid);
+	public Student(double fee, String course) {
+		System.out.println(" Student(double fee, String course)");
+		this.fee = fee;
+		this.course = course;
+	}
+
+	public Student(int sid, String name, double fee, String course) {
+		System.out.println(" Student(parameter course)");
+		this.sid = sid;
 		this.name = name;
+		this.fee = fee;
+		this.course = course;
 	}
 
 	public void display() {
-		System.out.println("StudentId: " + sid + " StudentName: " + name);
+		System.out.println("StudentId: " + sid);
+		System.out.println("Studentname: " + name);
+		System.out.println("Studentfee: " + fee);
+		System.out.println("Studentcourse: " + course);
 	}
 
 }

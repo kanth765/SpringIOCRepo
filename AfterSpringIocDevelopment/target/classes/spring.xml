@@ -5,6 +5,18 @@
                 http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="network" class="com.vidvaan.network.bean.AirtelNetwork"></bean>
+	<bean id="jio" class="com.vidvaan.network.bean.JioNetwork">
+	</bean>
+	<bean id="airtel" class="com.vidvaan.network.bean.AirtelNetwork">
+	</bean>
+	<bean id="idea" class="com.vidvaan.network.bean.IdeaNetwork">
+	</bean>
 
+	<bean id="samsung" class="com.vidvaan.network.bean.Samsung">
+		<property name="network" ref="jio" />
+	</bean>
+	
+		<bean id="xoami" class="com.vidvaan.network.bean.Xoami">
+		<property name="network" ref="airtel" />
+	</bean>
 </beans>

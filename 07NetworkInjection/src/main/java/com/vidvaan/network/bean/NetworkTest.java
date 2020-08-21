@@ -11,9 +11,8 @@ public class NetworkTest {
 		Samsung samsung = (Samsung) context.getBean("samsung");
 		samsung.connectNetwork();
 		
-		Xoami xoami = (Xoami) context.getBean("xoami");
+		Xoami xoami = (Xoami) context.getBean("redmi");
 		xoami.connectNetwork();
-
 	}
 
 }

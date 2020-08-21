@@ -1,7 +1,6 @@
 package com.vidvaan.network.bean;
 
-public class Samsung {
-
+public class Xoami {
 	private Network network;
 
 	public void setNetwork(Network network) {
@@ -10,9 +9,8 @@ public class Samsung {
 
 	public void connectNetwork() {
 		network.calls();
-		network.sms();
 		network.data();
-
+		network.sms();
 	}
 
 }

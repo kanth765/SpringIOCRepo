@@ -5,19 +5,18 @@
                 http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="student" name="st1,st2,st3"  class="com.vidvaan.student.bean.Student">
-	
-		<constructor-arg name="sid" value="100" index="0" type="int"/>
-		<constructor-arg name="name" value="Sekhar" index="1"  type="java.lang.String"/>
+	<bean id="student" class="com.vidvaan.student.bean.Student">
+		<constructor-arg name="fee" value="20000.0" />
+		<constructor-arg name="course" value="JavaFullCourse" />
 	</bean>
 
 
-<!-- <bean id="student2" class="com.vidvaan.student.bean.Student"> -->
-<!-- 		<constructor-arg name="sid" value="101" /> -->
-<!-- 		<constructor-arg name="name" value="Laxmi" /> -->
-<!-- 	</bean> -->
-<alias name="student" alias="st1"/>
-<alias name="student" alias="st2"/>
-<alias name="student" alias="st3"/>
+	<!-- <bean id="student2" class="com.vidvaan.student.bean.Student"> -->
+	<!-- <constructor-arg name="sid" value="101" /> -->
+	<!-- <constructor-arg name="name" value="Laxmi" /> -->
+	<!-- </bean> -->
+	<!-- <alias name="student" alias="st1"/> -->
+	<!-- <alias name="student" alias="st2"/> -->
+	<!-- <alias name="student" alias="st3"/> -->
 
 </beans>
