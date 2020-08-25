@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employeeController"
+		class="com.vidvaan.ems.controller.EmployeeController"
+		autowire="byName" />
+
+
+	<bean id="employeeServiceImpl"
+		class="com.vidvaan.ems.service.EmployeeServiceImpl" autowire="byName" />
+
+
+
+	<bean id="employeeDaoImpl"
+		class="com.vidvaan.ems.dao.EmployeeDaoImpl" />
+
+
+
+
+</beans>
