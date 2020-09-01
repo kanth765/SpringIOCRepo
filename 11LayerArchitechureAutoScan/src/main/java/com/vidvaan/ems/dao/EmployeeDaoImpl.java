@@ -1,10 +1,11 @@
 package com.vidvaan.ems.dao;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.vidvaan.ems.bean.Employee;
 
-@Repository
+@Component
 public class EmployeeDaoImpl implements EmployeeDAO {
 
 	public void save(Employee employee) {
