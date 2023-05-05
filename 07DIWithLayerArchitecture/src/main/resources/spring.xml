@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dao" class="com.ciq.dao.EmployeeDaoImpl">
+	</bean>
+
+	<!-- <bean id="service" class="com.ciq.service.EmployeeServiceImpl"> -->
+	<!-- <property name="employeeDaoImpl" ref="dao"></property> -->
+	<!-- </bean> -->
+
+	<bean id="service" class="com.ciq.service.EmployeeServiceImpl">
+		<constructor-arg name="employeeDaoImpl" ref="dao" />
+	</bean>
+	<!-- <bean id="controller" -->
+	<!-- class="com.ciq.controller.EmployeeController"> -->
+	<!-- <property name="employeeServiceImpl" ref="service"></property> -->
+	<!-- </bean> -->
+
+	<bean id="controller" class="com.ciq.controller.EmployeeController">
+		<constructor-arg name="employeeServiceImpl" ref="service" />
+	</bean>
+
+
+</beans>
