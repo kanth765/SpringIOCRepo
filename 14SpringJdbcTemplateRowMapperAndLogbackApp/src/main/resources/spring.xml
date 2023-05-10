@@ -10,12 +10,13 @@
 
 	<context:annotation-config />
 	<context:component-scan base-package="com.ciq.*" />
-	<!-- <bean -->
-	<!-- class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 	<bean -->
+<!-- 	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
 
-	<!-- <property name="location" value="db.properties"> -->
-	<!-- </property> -->
-	<!-- </bean> -->
+<!-- 	<property name="location" value="db.properties"> -->
+<!-- 	</property> -->
+<!-- 	</bean> -->
+<context:property-placeholder location="classpath:db.properties" />
 
  
 	<bean id="dataSource"
