@@ -5,30 +5,31 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.ciq.pojo.Employee;
 
-@Repository
 public class EmployeeDaoImpl implements EmployeeDao {
-	private static Logger LOGS = LoggerFactory.getLogger(EmployeeDaoImpl.class);
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
+//	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+//		this.jdbcTemplate = jdbcTemplate;
+//	}
+
 	public void save(Employee employee) {
-		LOGS.info("dao impl save method start here ..........");
 		int result = jdbcTemplate.update("insert into employee values(?,?,?)",
 				new Object[] { employee.getId(), employee.getName(), employee.getSalary() });
 		System.out.println(result);
-		LOGS.info("save method result .........." + result);
-		LOGS.info("dao impl save method ends here ..........");
+
 	}
 
 	public List<Employee> getEmployees() {
@@ -65,14 +66,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public int delete(int id) {
-		LOGS.info("dao impl save method start here ..........");
 		Employee employee = new Employee();
-		LOGS.info("employee instanitiaed ..........");
 		employee.setId(id);
-		LOGS.info("employee id .........." + id);
 
 		int result = jdbcTemplate.update("delete from employee  where id=?", new Object[] { employee.getId() });
-		LOGS.info("employee result .........." + id);
 		return result;
 	}
 
@@ -97,4 +94,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	// get by id, get by name
 
+	public void getProcedureCall(int id) {
+		SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("employeeGetByID");
+		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+		namedParameters.addValue("t_id", id);
+		Map<String, Object> result = simpleJdbcCall.execute(namedParameters);
+		System.out.println(result);
+	}
 }

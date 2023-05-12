@@ -9,11 +9,13 @@ import org.springframework.stereotype.Controller;
 import com.ciq.pojo.Employee;
 import com.ciq.service.EmployeeServiceImpl;
 
-@Controller("cts")
 public class EmployeeController {
 
-	@Autowired
 	private EmployeeServiceImpl employeeServiceImpl;
+
+	public void setEmployeeServiceImpl(EmployeeServiceImpl employeeServiceImpl) {
+		this.employeeServiceImpl = employeeServiceImpl;
+	}
 
 	public void save(Employee employee) {
 		employeeServiceImpl.save(employee);
@@ -42,6 +44,11 @@ public class EmployeeController {
 
 	public Employee getById(int id) {
 		return employeeServiceImpl.getById(id);
+	}
+
+	public void getProcedureCall(int id) {
+		employeeServiceImpl.getProcedureCall(id);
+
 	}
 
 }

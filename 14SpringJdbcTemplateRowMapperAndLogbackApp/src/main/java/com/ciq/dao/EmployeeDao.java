@@ -16,4 +16,8 @@ public interface EmployeeDao {
 
 	List<Employee> getEmployees();
 
+	List<Employee> findAllEmps();
+
+	List<Employee> getEmps();
+
 }
