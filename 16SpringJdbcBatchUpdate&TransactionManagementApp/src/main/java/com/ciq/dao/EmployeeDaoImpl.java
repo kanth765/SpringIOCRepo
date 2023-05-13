@@ -121,11 +121,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			}
 		});
 		int i = 0;
-		for (i = 0; i > results.length; i++) {
-			System.out.println(i);
+		int count = 0;
+		for (i = 0; i < results.length; i++) {
+			if (results[i] == 1) {
+				count++;
+			}
 		}
 		System.out.println(Arrays.toString(results));
-		return i;
+		return count;
 	}
 
 	// get by id, get by name
